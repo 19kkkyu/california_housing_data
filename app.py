@@ -30,12 +30,11 @@ else:
     df = df[df['median_income'] >= 4.5]
 
 # filter by price
-df = df[df.population >= price_filter]
+df = df[df['median_house_value']>= price_filter]
 
 # filter by locationtype
 df = df[df.ocean_proximity.isin(location_type_filter)]
 
-# show dataframe
 st.subheader('See more filters in the slidebar:')
 
 # show on map
@@ -48,4 +47,3 @@ df['median_house_value'].hist(bins=30, ax=ax)
 ax.set_xlabel('Median House Value')
 ax.set_ylabel('Frequency')
 st.pyplot(fig)
-
