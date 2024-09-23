@@ -8,7 +8,7 @@ sns.set()
 st.title('California Housing Data(1990) by Junjie Zheng')
 df = pd.read_csv('housing.csv')
 
-price_filter = st.slider('Minimal Median House Price', 0, 500001, 200000)
+price_filter = st.slider('Minimal Median House Price', int(df['median_house_value'].min()), 500001, 200000)
 
 # create a multi select
 location_type_filter = st.sidebar.multiselect(
